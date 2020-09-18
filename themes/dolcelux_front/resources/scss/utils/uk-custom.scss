@@ -1,0 +1,219 @@
+// 1. Your custom variables and variable overwrites.
+
+
+//$global-large-margin:                            50px;
+$global-gutter:                                  2rem;
+$global-medium-gutter:                           2rem;
+
+//========== FONT ===========
+$global-font-size: var(--mainFontSize);
+// $global-emphasis-color: $accentColor;
+$global-font-family: var(--mainFont);
+$base-heading-font-weight:                       400;
+$base-heading-margin-top:                        0;
+// $base-margin-vertical:                           3rem;
+$base-h1-font-size-m:                            8rem;
+$base-h1-font-size:                              3.6rem;
+$base-h1-line-height:                            1.2;
+$base-heading-color:                             inherit;
+$base-h2-font-size-m:                            3.6rem;
+$base-h2-font-size:                              2.4rem;
+$base-h2-line-height:                            1.2 !default;
+$base-h3-font-size:                              2.8rem;
+$base-h3-line-height:                            1.2 !default;
+$base-h4-font-size:                              1.8rem;
+$base-h4-line-height:                            1.2 !default;
+$base-h5-font-size:                              2.0rem;
+$base-h5-line-height:                            1.2 !default;
+$text-large-font-size:                           2rem;
+$text-large-line-height:                         1.2;
+$text-small-font-size:                           2rem;
+$text-small-line-height:                         1.2;
+$text-primary-color:                             $accentColor;
+
+//========== MARGIN ===========
+$global-small-margin: 2rem;
+$global-margin: 3rem;
+$global-medium-margin: 5rem;
+$global-large-margin: 8rem;
+$global-xlarge-margin: 12rem;
+
+$margin-margin: 2rem;
+$margin-margin-m: 3rem;
+
+
+//========== PADDING ===========
+$padding-large-padding: 7.5rem;
+$padding-large-padding-l: 7.5rem;
+
+
+//========== BUTTON ===========
+$button-padding-horizontal: 1.8rem;
+$button-font-size: 1.2rem !default;
+$button-line-height: 1;
+
+$button-primary-background: transparent;
+$button-primary-color:  $accentColor;
+$button-primary-hover-background: $primary-color;
+$button-primary-hover-color: #333333;
+$button-primary-active-background: $primary-color;
+$button-primary-active-color: #333333;
+
+$button-default-background: $primary-color;
+$button-default-color: #333333;
+$button-default-hover-background: transparent;
+$button-default-hover-color: $accentColor;
+$button-default-active-background: transparent;
+$button-default-active-color: $accentColor;
+
+
+//========== FORM ===========
+$form-background: transparent;
+$form-color: rgba(229, 229, 229, 0.42);
+$form-padding-horizontal: 0;
+$form-focus-background: transparent;
+$form-focus-color: #F7F7F7;
+$form-padding-vertical: 0;
+
+
+// 2. Import default variables and available mixins.
+@import "~uikit/src/scss/variables-theme.scss";
+@import "~uikit/src/scss/mixins-theme.scss";
+
+//========== FONT ===========
+@mixin hook-base-heading() {
+    letter-spacing: 0.02em;
+}
+@mixin hook-base-h1() {
+    text-transform: uppercase;
+    @media only screen and (max-width: $breakpoint-medium) {
+        text-transform: none;
+    }
+}
+@mixin hook-base-h2() {
+    font-weight: 300;
+}
+@mixin hook-base-h3() {
+    font-weight: 500;
+    @media only screen and (max-width: $breakpoint-medium) {
+        font-size: 1.8rem;
+    }
+}
+@mixin hook-base-h4() {
+    @media only screen and (max-width: $breakpoint-medium) {
+        font-size: 1.8rem;
+    }
+}
+@mixin hook-base-h5() {
+    font-weight: 700;
+    @media only screen and (max-width: $breakpoint-medium) {
+        font-size: 1.6rem;
+    }
+}
+@mixin hook-text-small() {
+    letter-spacing: 0;
+    font-weight: 600;
+    @media only screen and (max-width: $breakpoint-medium) {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+}
+
+@mixin hook-text-large() {
+    letter-spacing: 0;
+    font-weight: 600;
+    @media only screen and (max-width: $breakpoint-medium) {
+        font-size: 1.2rem;
+    }
+}
+
+
+//========== BUTTON ===========
+@mixin hook-button(){
+    border: .2rem solid $border-base;
+    min-width: 10rem;
+    transition: var(--g-anime);
+    @media only screen and (max-width: $breakpoint-medium) {
+        border: .1rem solid $border-base;
+    }
+}
+@mixin hook-button-primary(){
+    border-radius: .1rem;
+    padding: 1rem 1.8rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+    @media only screen and (max-width: $breakpoint-medium) {
+        padding: .7rem .5rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+        min-width: 10rem;
+    }
+}  
+@mixin hook-button-default(){
+    padding: .5rem 1.8rem;
+    line-height: 2;
+    text-transform: uppercase;
+}
+
+@mixin hook-button-default-hover(){
+    border-color: $border-base;
+}
+
+
+//========== FORM ===========
+@mixin hook-form() {
+    font-size: 1.8rem;
+    letter-spacing: 0.07em;
+    border-bottom: 2px solid #C4C4C4;
+}
+
+@mixin hook-form-focus() {
+    border-color: $border-base;
+}
+// 3. Your custom mixin overwrites.
+
+
+// 4. Import UIkit.
+// @import "~uikit/src/scss/components/accordion";
+@import "~uikit/src/scss/components/animation";
+// @import "~uikit/src/scss/components/background";
+@import "~uikit/src/scss/components/base";
+// @import "~uikit/src/scss/components/breadcrumb";
+@import "~uikit/src/scss/components/button";
+// @import "~uikit/src/scss/components/filter";
+@import "~uikit/src/scss/components/form";
+// @import "~uikit/src/scss/components/cover";
+@import "~uikit/src/scss/components/dropdown";
+// @import "~uikit/src/scss/components/dotnav";
+@import "~uikit/src/scss/components/grid";
+@import "~uikit/src/scss/components/icon";
+// @import "~uikit/src/scss/components/label";
+// @import "~uikit/src/scss/components/margin";
+@import "~uikit/src/scss/components/modal";
+@import "~uikit/src/scss/components/flex";
+// @import "~uikit/src/scss/components/nav";
+// @import "~uikit/src/scss/components/navbar";
+// @import "~uikit/src/scss/components/pagination";
+@import "~uikit/src/scss/components/position";
+@import "~uikit/src/scss/components/padding";
+// @import "~uikit/src/scss/components/scrollspy";
+@import "~uikit/src/scss/components/slidenav";
+@import "~uikit/src/scss/components/slider";
+// @import "~uikit/src/scss/components/slideshow";
+
+// @import "~uikit/src/scss/components/sticky";
+@import "~uikit/src/scss/components/svg";
+// @import "~uikit/src/scss/components/switcher";
+@import "~uikit/src/scss/components/text";
+@import "~uikit/src/scss/components/visibility";
+// @import "~uikit/src/scss/components/utility";
+
+// @import "~uikit/src/scss/components/search";
+@import "~uikit/src/scss/components/overlay";
+
+
+// @import "classes";
+@import "_uikit-custom/width";
+@import "_uikit-custom/margin";
+
+

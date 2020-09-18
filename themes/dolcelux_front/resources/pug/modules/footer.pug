@@ -1,0 +1,26 @@
+footer.footer.uk-text-center
+  p.uk-margin-remove-bottom designed by #[span.uk-text-bold Straut & Skobelev]
+  p.uk-margin-remove-bottom 2020. All rights reserved.
+
+div(id="mobile-menu" class="uk-modal-full" data-uk-modal) 
+  .uk-modal-dialog.uk-modal-close-full
+    img.mobile-menu__logo(src="resources/assets/img/logo.png" width="83" height="18")           
+    div.container.mobile-menu
+      div
+        ul
+          each value, key in {'main': 'Главная', 'kitchen': 'Меню', 'news' :'Новости', 'contacts': 'Контакты'}
+            li.nav-link
+              a(href=`#${key}` data-uk-scroll)=value
+      div.uk-margin-large-top
+        include ../components/social
+        div.uk-margin-medium-top
+          form
+            textarea.uk-textarea(placeholder="КОМЕНТАРИЙ")
+            input.uk-input(type="tel" placeholder="+375 (29) 111-11-11")
+            bytton.uk-button.uk-button-default.uk-width-1-1(type="submit") отправить
+         
+ul.uk-text-right
+  li            
+    a(href="article.html") article
+  li            
+    a(href="index.html") index  

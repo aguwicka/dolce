@@ -1,0 +1,261 @@
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/uk-custom";
+
+//--------------------------------
+// Global style
+//--------------------------------
+html {
+  font-size: 10px;
+  color: $mainFontColor;
+
+  @media screen and (max-width: $breakpoint-large) and (min-width: $breakpoint-medium + 1) {
+    font-size: calc(6.5px + 3.5 *((100vw - 768px)/(1440 - 768)));
+  }
+  @media screen and (max-width: $breakpoint-medium) and (min-width: $breakpoint-small + 1) {
+    font-size: calc(11px + 2 * ((100vw - 768px)/(1024 - 768)));
+  }
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: calc(10px + 2 * ((100vw - 320px)/(767 - 320)));
+  }
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: var(--mainFont);
+  font-size: var(--mainFontSize);
+  line-height: var(--mainLineHeight);
+  font-weight: var(--mainFontWeight);
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: $mainFontColor;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: $mainFontColor;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  transition: var(--g-anime);
+
+  &:focus {
+    outline: none;
+
+  }
+
+  &:hover {
+    color: inherit;
+  }
+
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+  }
+}
+
+button {
+  cursor: pointer;
+  transition: var(--g-anime);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+}
+
+input, textarea {
+  color: $mainFontColor;
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea.uk-textarea{
+  width: 100%;
+  height: 3.6rem;
+  margin-bottom: 1.2rem;
+  resize: none;
+}
+
+input.uk-input{
+  width: 100%;
+  height: 3.6rem;
+  margin-bottom: 1.2rem;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+//--------------------------------
+// Global classes
+//--------------------------------
+
+.container {
+  margin-left: auto;
+  width: 72%;
+  padding-right: 6rem;
+  @media (min-width: $breakpoint-xlarge) {
+    width: 100%;
+    padding-left: 50rem;
+  }
+  @media (max-width: 1200px) {
+    padding-right: 4rem;
+  }
+  @media (max-width: $breakpoint-medium) {
+    width: calc(100% - 2.4rem);
+    padding: 0;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+  }
+}
+
+.text-content {
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  color: $mainFontColor;
+  line-height: 1.4;
+  p{
+    display: block;
+    margin-bottom: 3.5rem;
+  }
+  img{
+    margin-bottom: 3.5rem;
+  }
+  ul, ul li {
+    list-style-type: disc;
+  }
+
+  ul, ol {
+    padding-left: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  ol, ol li {
+    list-style-type: decimal;
+  }
+
+  li:nth-child(n+2) {
+    margin-top: 1rem;
+  }
+
+  table {
+    margin-bottom: 3rem;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table, th, td {
+    border: 1px solid black;
+  }
+
+  th, td {
+    padding: .5rem 1rem;
+  }
+
+  tr:first-child td {
+    background-color: $accentColor;
+    color: #fff;
+    font-weight: 600;
+  }
+
+
+  @media (max-width: $breakpoint-medium) {
+
+    ul, ol {
+      padding-left: 2rem;
+    }
+
+    &.bg-color {
+      padding-top: 5rem;
+      padding-bottom: 5.5rem;
+    }
+  }
+}
+
+
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+
+  & > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+//--------------------------------
+// Components
+//--------------------------------
+@import "components/social";
+@import "components/nav-link";
+@import "components/burger-icon";
+@import "components/card";
+@import "components/filter";
+
+//--------------------------------
+// Modules
+//--------------------------------
+@import "modules/header";
+@import "modules/footer";
+
+@import "modules/main-page";
+@import "modules/mobile-menu";
+@import "modules/news";
+@import "modules/contacts";
+@import "modules/slider";
+@import "modules/article";

@@ -1,0 +1,33 @@
+.social {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item{
+    margin-right: 2.5rem;
+  }
+
+   a {
+     display: block;
+   }
+  
+  svg {
+    width: 3rem;
+    height: 3rem;
+    fill: $mainFontColor;
+    transition: var(--g-anime);
+  }
+
+  a:hover {
+    svg {
+      fill: $accentColor;
+    }
+  }
+
+  a:active {
+    svg {
+      fill: $accentColor;
+    }
+  }
+}

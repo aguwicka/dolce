@@ -1,0 +1,8 @@
+// Fonts here
+// see more: https://github.com/vedees/webpack-template/blob/master/README.md#import-js-files
+
+@include font-face("Montserrat", "../assets/fonts/Montserrat-Light", 300);
+@include font-face("Montserrat", "../assets/fonts/Montserrat-Regular", 400);
+@include font-face("Montserrat", "../assets/fonts/Montserrat-Medium", 500);
+@include font-face("Montserrat", "../assets/fonts/Montserrat-SemiBold", 600);
+@include font-face("Montserrat", "../assets/fonts/Montserrat-Bold", 700);

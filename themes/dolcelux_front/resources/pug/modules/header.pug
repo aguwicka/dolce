@@ -1,0 +1,22 @@
+header
+  .header__desktop(class="uk-visible@m")
+    div.header
+      div
+        ul(data-uk-scrollspy-nav="closest: li; scroll: true;")
+          li.nav-link.nav-link--active
+            a(href="#main" data-uk-scroll) Главная
+          each value, key in {'kitchen': 'Меню', 'news' :'Новости', 'contacts': 'Контакты'}
+            li.nav-link
+              a(href=`#${key}` data-uk-scroll)=value
+      div.uk-margin-large-top
+        include ../components/social
+        div.uk-margin-medium-top
+          form
+            textarea.uk-textarea(placeholder="КОМЕНТАРИЙ")
+            input.uk-input(type="tel" placeholder="+375 (29) 111-11-11")
+            bytton.uk-button.uk-button-default.uk-width-1-1(type="submit") отправить
+  .header__modile(class="uk-hidden@m")
+    button.burger-icon(data-uk-toggle="target: #mobile-menu")  
+      span
+      span
+      span          
